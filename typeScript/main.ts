@@ -21,4 +21,18 @@ let drawPoint = (point:Point) => {
     //.....
 }
 
+// ----> violate the cohesion theory
+
 // Class
+class Point{
+    x:number;
+    y:number;
+
+    draw(){
+
+    }
+
+    getDistance(another:Point){
+        
+    }
+}
