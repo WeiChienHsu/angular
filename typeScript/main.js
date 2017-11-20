@@ -6,31 +6,30 @@ var Color;
     Color[Color["Blue"] = 2] = "Blue";
 })(Color || (Color = {}));
 ;
-var backgroundColor = Color.Blue;
+let backgroundColor = Color.Blue;
 // Assertions
-var message;
+let message;
 message = "abc";
-var endsWithC = message.endsWith("c");
+let endsWithC = message.endsWith("c");
 console.log(endsWithC);
 //Arrow function
-var doLog = function (message) { return console.log(message); };
-var drawPoint = function (point) {
+let doLog = (message) => console.log(message);
+let drawPoint = (point) => {
     //.....
 };
 // ----> violate the cohesion theory
-// Class
-var Point = /** @class */ (function () {
-    function Point() {
+// Class && Object && Constructor
+class Point {
+    constructor(x, y) {
+        this.x = y;
+        this.y = y;
     }
-    Point.prototype.draw = function () {
+    draw() {
         console.log("X: " + this.x + "Y: " + this.y);
-    };
-    Point.prototype.getDistance = function (another) {
+    }
+    getDistance(another) {
         //...
-    };
-    return Point;
-}());
-var point = new Point();
-point.x = 1;
-point.y = 2;
+    }
+}
+let point = new Point(1, 2);
 point.draw();

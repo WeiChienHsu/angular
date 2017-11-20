@@ -1,18 +1,12 @@
 class Point{
-    x:number;
-    y:number;
-
-    constructor(x:number, y: number){
-        this.x = y;
-        this.y = x;
+    constructor(private _x?:number, private _y?: number){
     }
 
     draw(){
-        console.log("X: " + this.x + "Y: " + this.y);
+        console.log("X: " + this._x + "Y: " + this._y);
     }
 
-    getDistance(another:Point){
-        //...
+   
     }
 }
 
