@@ -1,10 +1,3 @@
-function log(message){
-    console.log(message);
-}
-
-var message = "Hello World";
-
-log(message);
 
 let a:number;
 let b:boolean;
@@ -18,3 +11,9 @@ const ColorGreen = 1;
 
 enum Color {Red = 0, Greem = 1, Blue = 2};
 let backgroundColor = Color.Blue;
+
+let message;
+message = "abc";
+let endsWithC = (<string>message).endsWith("c");
+console.log(endsWithC);
+

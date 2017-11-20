@@ -1,5 +1,20 @@
-function log(message) {
-    console.log(message);
-}
-var message = "Hello World";
-log(message);
+var a;
+var b;
+var c;
+var d;
+var e = [1, 2, 3];
+var f = [1, true, "a", false];
+var ColorRed = 0;
+var ColorGreen = 1;
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Greem"] = 1] = "Greem";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+;
+var backgroundColor = Color.Blue;
+var message;
+message = "abc";
+var endsWithC = message.endsWith("c");
+console.log(endsWithC);
