@@ -23,16 +23,24 @@ let drawPoint = (point:Point) => {
 
 // ----> violate the cohesion theory
 
-// Class
+// Class && Object && Constructor
 class Point{
     x:number;
     y:number;
 
-    draw(){
+    constructor(x:number, y: number){
+        this.x = y;
+        this.y = y;
+    }
 
+    draw(){
+        console.log("X: " + this.x + "Y: " + this.y);
     }
 
     getDistance(another:Point){
-        
+        //...
     }
 }
+
+let point = new Point(1,2);
+point.draw(); 
