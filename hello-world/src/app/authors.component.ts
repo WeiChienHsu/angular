@@ -15,7 +15,7 @@ import { AuthorsService} from "./authors.service";
 
 export class AuthorsComponent{
     title = "Authors";
-    authors = 0 ;
+    authors ;
     getNumber(){
         return this.authors.length;
     }
