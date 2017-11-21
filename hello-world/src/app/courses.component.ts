@@ -10,13 +10,14 @@ import { CoursesService } from './courses.service';
                         {{ course }}
                     </li>
                   </ul>
-                    <button class="btn btn-primary" [class.btn-lg] = "getBigger">Save</button>
+                    <button class="btn btn-primary" [class.btn-lg] = "getBigger" >Save</button>
                     <button class="btn btn-primary" (click) = "onSave($event)" >Save</button>
                     <input [(ngModel)] = "email" (keyup.enter) = "onKeyUp()">
                     <p>
-                        {{ text | summary }}
+                       {{text | summary}}
 
                     </p>
+                    <button class="glyphicon" [class.glyphicon-star] = "actived" [class.glyphicon-star-empty] = "!actived" (click) = "activeButton()" ></button>
              </div>
               `
 })
@@ -29,6 +30,14 @@ export class CoursesComponent {
     getTitle() {
         return this.title;
     }
+
+    actived = true;
+
+    activeButton(){
+        this.actived = !this.actived;
+        console.log(this.actived);
+    }
+
 
     getBigger = true;
 
