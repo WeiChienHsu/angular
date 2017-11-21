@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { CoursesComponent } from './courses.component';
 import { CoursesService } from './courses.service';
 import { AppComponent } from './app.component';
+import { AuthorsComponent } from './authors.component';
+import { AuthorsService } from './authors.service';
 
 
 
@@ -10,13 +12,14 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     CoursesComponent,
-
+    AuthorsComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    AuthorsService
   ],
   bootstrap: [AppComponent]
 })
