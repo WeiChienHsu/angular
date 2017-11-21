@@ -10,7 +10,9 @@ import { CoursesService } from './courses.service';
                     </li>
               </ul>
               <button class="btn btn-primary" [class.btn-lg] = "getBigger">Save</button>
-    `
+              <button class="btn btn-primary" (click) = "onSave($event)" >Save</button>
+              <input (keyup.enter) = "onKeyUp()" >
+              `
 })
 
 export class CoursesComponent {
@@ -21,7 +23,16 @@ export class CoursesComponent {
         return this.title;
     }
 
-    getBigger = false;
+    getBigger = true;
+
+    onSave($event){
+        $event;
+        console.log("button was clicked",$event);
+    }
+
+    onKeyUp(){
+        console.log("Enter was pressed");
+    }
 
     constructor(service : CoursesService) {
         this.courses = service.getCourses();
