@@ -9,6 +9,7 @@ import { CoursesService } from './courses.service';
                         {{ course }}
                     </li>
               </ul>
+              <button class="btn btn-primary">Save</button>
     `
 })
 
