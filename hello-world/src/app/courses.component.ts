@@ -9,7 +9,7 @@ import { CoursesService } from './courses.service';
                         {{ course }}
                     </li>
               </ul>
-              <button class="btn btn-primary">Save</button>
+              <button class="btn btn-primary" [class.btn-lg] = "getBigger">Save</button>
     `
 })
 
@@ -20,6 +20,8 @@ export class CoursesComponent {
     getTitle() {
         return this.title;
     }
+
+    getBigger = false;
 
     constructor(service : CoursesService) {
         this.courses = service.getCourses();
