@@ -17,7 +17,7 @@ import { CoursesService } from './courses.service';
                        {{text | summary}}
 
                     </p>
-                    <button class="glyphicon" [class.glyphicon-star] = "actived" [class.glyphicon-star-empty] = "!actived" (click) = "activeButton()" ></button>
+                    <span class="glyphicon" [class.glyphicon-star] = "isClicked" [class.glyphicon-star-empty] = "!isClicked" (click) = "activeButton()" ></span>
              </div>
               `
 })
@@ -31,11 +31,11 @@ export class CoursesComponent {
         return this.title;
     }
 
-    actived = true;
+    isClicked = true;
 
     activeButton(){
-        this.actived = !this.actived;
-        console.log(this.actived);
+        this.isClicked = !this.isClicked;
+        console.log(this.isClicked);
     }
 
 
