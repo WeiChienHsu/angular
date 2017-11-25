@@ -1,3 +1,4 @@
+import { FavoriteChangedEvenArgs } from './components/favorite/favorite.component';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,7 +12,7 @@ export class AppComponent {
     isFavorite: true
   }
 
-  onFavoriteChanged(){
-    console.log("Change!!!!!");
+  onFavoriteChanged(enventArgs:FavoriteChangedEvenArgs){
+    console.log("Change!!!!!",enventArgs);
   }
 }
