@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors.component';
 import { AuthorsService } from './authors.service';
 import { SummaryPipe } from './summary.pipe';
+import { TitleCasePipe } from './title-case.pipe';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 
 
@@ -15,7 +17,9 @@ import { SummaryPipe } from './summary.pipe';
     AppComponent,
     CoursesComponent,
     AuthorsComponent,
-    SummaryPipe
+    SummaryPipe,
+    TitleCasePipe,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
