@@ -10,6 +10,7 @@ import { SummaryPipe } from './summary.pipe';
 import { TitleCasePipe } from './title-case.pipe';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { PanelComponent } from './components/panel/panel.component';
+import { HeartComponent } from './components/heart/heart.component';
 
 
 
@@ -21,7 +22,8 @@ import { PanelComponent } from './components/panel/panel.component';
     SummaryPipe,
     TitleCasePipe,
     FavoriteComponent,
-    PanelComponent
+    PanelComponent,
+    HeartComponent
   ],
   imports: [
     BrowserModule,
