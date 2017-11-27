@@ -32,10 +32,12 @@
 
 </div>
 
+
+<button (click) = "onAdd()">Add</button>
 <div>
   <ul>
-    <li *ngFor = "let course of courses">
-        {{course.name}}
+    <li *ngFor = "let course of courses, index as i">
+        {{i+1}} : {{course.name}}
     </li>
   </ul>
 </div>

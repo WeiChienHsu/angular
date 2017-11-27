@@ -11,5 +11,11 @@ export class AppComponent {
     {id: 2, name: "Course2"},
     {id: 3, name: "Course3"}
    ];
+
+   onAdd(){
+     const currentId = this.courses.length + 1;
+     this.courses.push({id: currentId, name: "Course" + currentId });
+   }
+
   viewMode = "map";
 }
