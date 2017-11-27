@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  courses = [ "Math", "Chinese" ];
+  courses = [ 
+    {id: 1, name: "Course1"},
+    {id: 2, name: "Course2"},
+    {id: 3, name: "Course3"}
+   ];
   viewMode = "map";
 }
