@@ -1,4 +1,3 @@
-import { FavoriteChangedEvenArgs } from './components/favorite/favorite.component';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,13 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  tweet = {
-    body: 'Here is the body of a tweet...',
-    isLiked: false,
-    likesCount: 0
-  }
-
-  onFavoriteChanged(enventArgs:FavoriteChangedEvenArgs){
-    console.log("Change!!!!!",enventArgs);
+  tweet = { 
+    body: '...',
+    likesCount: 10,
+    isLiked: true
   }
 }

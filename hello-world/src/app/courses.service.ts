@@ -1,5 +1,6 @@
-export class CoursesService{
-    getCourses(){
-        return ["course1","course2","course3"];
+
+export class CoursesService {
+    getCourses() {
+        return ["course1", "course2", "course3"];
     }
 }
