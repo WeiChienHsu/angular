@@ -1,5 +1,10 @@
+import { AppError } from './../comment/app-error';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+import { Observable } from 'rxjs/Observable'
+import { NotFoundError } from '../comment/not-found-error';
 
 @Injectable()
 export class PostService {
@@ -21,6 +26,11 @@ export class PostService {
 
   deletePost(id){
     return this.http.delete(this.url + '/' + id)
+      .catch((error: Response) => {
+        if(error.status === 404)
+          return Observable.throw(new NotFoundError);
+        return Observable.throw(new AppError(error))
+      })
     
   }
 }
