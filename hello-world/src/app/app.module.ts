@@ -1,3 +1,4 @@
+import { PostComponent } from './../../../http/src/app/component/post/post.component';
 import { GithubFollowersService } from './services/github-followers.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { PostService } from './services/post.service';
@@ -59,7 +60,30 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { 
+        path: '', 
+        component: HomeComponent 
+      },
+      {
+         path: 'followers',
+        component: GithubFollowersComponent 
+      },
+      { 
+        path: 'profile/:username', 
+        component: GithubProfileComponent 
+      },
+      { 
+        path: 'posts', 
+        component: PostComponent 
+      },
+      { 
+        path: '**', 
+        component: NotFoundComponent 
+      },      
+
+    ])
   ],
   providers: [
     PostService,
