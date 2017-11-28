@@ -36,9 +36,33 @@
 <button (click) = "onAdd()">Add</button>
 <div>
   <ul>
-    <li *ngFor = "let course of courses, index as i">
+    <li *ngFor = "let course of courses, index as i; trackBy: trackCourse">
         {{i+1}} : {{course.name}} <button (click) = "onRemove(course)">Remove</button>
     </li>
     
   </ul>
 </div>
+<button (click) = "onReset()">Reset</button>
+
+<span
+  class="glyphicon"
+  [ngClass]=" {
+    'glyphicon-star':isSelected,
+    'glyphicon-star-empty': !isSelected
+      }"
+  (click) = "onClick()"
+    >
+</span>
+
+
+<button
+  [ngStyle] = "{
+    'backgroundColor' : canSave ? 'green' : 'gray',
+    'color' : canSave ? 'red' : 'white',
+    'fontWeight' :canSave ? 'blod' : 'normal'
+  }"
+
+  (click) = "onClick()"
+  >
+ Save 
+</button>
