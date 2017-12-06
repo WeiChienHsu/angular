@@ -9,10 +9,14 @@ export class AppComponent implements OnInit {
   title = 'app';
 
   ngOnInit(){
-    console.log('setTimeout start execution');
-    setTimeout( ()=> {
-      console.log('callback called');
-    }, 5000);
-    console.log('setTimeout endexecution');
-  }
+    let promise = new Promise( resolve => {
+      console.log('Promise execution');
+      setTimeout( () => {
+        resolve('promise resolved');
+      }, 5000);
+    });
+
+    promise.then( (value: string) => {
+      console.log(value);
+    })
 }
