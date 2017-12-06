@@ -1,7 +1,6 @@
-import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { setTimeout } from 'timers';
-import { Subject } from 'rxjs/Subject';
+import { Subject, Observable } from 'rxjs/Rx';
 
 
 @Component({
@@ -34,28 +33,26 @@ export class AppComponent implements OnInit {
     // );
 
 
-    let subject = new Subject();
+    // let subject = new Subject();
 
-    subject.subscribe((v) => {
-      console.log('ObserverA: ' + v);
-    });
+    // subject.subscribe((v) => {
+    //   console.log('ObserverA: ' + v);
+    // });
 
-    subject.subscribe((v) => {
-      console.log('ObserverB: ' + v);
-    });
+    // subject.subscribe((v) => {
+    //   console.log('ObserverB: ' + v);
+    // });
 
-    subject.next('First Song');
-    subject.next('Second Song');
+    // subject.next('First Song');
+    // subject.next('Second Song');
 
-    subject.subscribe((v) => {
-      console.log('ObserverC: ' + v);
-    });
+    // subject.subscribe((v) => {
+    //   console.log('ObserverC: ' + v);
+    // });
 
-    subject.next('Third Song');
+    // subject.next('Third Song');
     
-
-  }
-
-  
+    const btn = document.querySelector('#btn');
+    const btn$ = Observable.fromEvent(btn, 'click');
 
 }
