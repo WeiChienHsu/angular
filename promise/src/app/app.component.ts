@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,18 +6,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   title = 'app';
 
-  ngOnInit(){
-    let promise = new Promise( resolve => {
-      console.log('Promise execution');
-      setTimeout( () => {
-        resolve('promise resolved');
-      }, 5000);
+  ngOnInit(){ 
+
+    let stream$ = new Observable(observer => {
+      console.log(`observable seexution`);
+
+      observer.next(1);
+      observer.next(2);
+      observer.next(3);
+      
     });
 
-    promise.then( (value: string) => {
-      console.log(value);
-    })
+    stream$.subscribe(
+      value => console.log(value),
+      error => console.log(error),
+      () => console.log('done')
+    );
+
+  }
+
+  
+
 }
