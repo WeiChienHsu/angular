@@ -17,13 +17,19 @@ export class AppComponent implements OnInit {
 
       observer.next(1);
       observer.next(2);
-      observer.next(3);
-      
+      observer.error(new Error('no movie'))
+
     });
 
-    stream$.subscribe(
-      value => console.log(value),
-      error => console.log(error),
+    let sub = stream$.subscribe(
+      value => alert(value + "!!!!!!!!"),
+      error => alert(error),
+      () => console.log('done')
+    );
+
+    let sub2 = stream$.subscribe(
+      value => alert(value + "????????"),
+      error => alert(error),
       () => console.log('done')
     );
 
